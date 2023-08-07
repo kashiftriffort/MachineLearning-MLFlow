@@ -29,6 +29,7 @@ class ModelTrainerConfig:
     alpha: float
     l1_ratio: float
     target_column: str
+    score_file_name: str
 
 @dataclass(frozen=True)
 class ModelEvaluationConfig:
@@ -39,3 +40,4 @@ class ModelEvaluationConfig:
     metric_file_name: Path
     target_column: str
     mlflow_url: str
+    evaluation_file_name: str

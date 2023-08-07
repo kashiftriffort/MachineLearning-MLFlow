@@ -2,9 +2,9 @@ import os
 import zipfile
 from pathlib import Path
 import urllib.request as request
-from src.mlProject import logger
-from src.mlProject.utils.common import get_size
-from src.mlProject.entity.config_entity import DataIngestionConfig
+from mlProject import logger
+from mlProject.utils.common import get_size
+from mlProject.entity.config_entity import DataIngestionConfig
 
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):

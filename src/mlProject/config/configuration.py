@@ -1,6 +1,6 @@
-from src.mlProject.constants import *
-from src.mlProject.utils.common import read_yaml, create_directories
-from src.mlProject.entity.config_entity import (DataIngestionConfig,
+from mlProject.constants import *
+from mlProject.utils.common import read_yaml, create_directories
+from mlProject.entity.config_entity import (DataIngestionConfig,
                                                 DataValidationConfig,
                                                 DataTransformationConfig,
                                                 ModelTrainerConfig,
@@ -70,7 +70,8 @@ class ConfigurationManager:
             model_name=config.model_name,
             alpha=params.alpha,
             l1_ratio=params.l1_ratio,
-            target_column=schema.name
+            target_column=schema.name,
+            score_file_name = config.score_file_name,
         )
         return model_trainer_config
     
@@ -89,5 +90,6 @@ class ConfigurationManager:
             metric_file_name=config.metric_file_name,
             target_column=schema.name,
             mlflow_url="https://dagshub.com/kashif.triffort/MachineLearning-MLFlow.mlflow",
+            evaluation_file_name = config.evaluation_file_name,
         )
         return model_evaluation_config
